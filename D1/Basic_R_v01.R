@@ -1,6 +1,6 @@
 
 
-#BASICS ABOUT R ===============================================================
+#BASICS ABOUT R =================================
 
 x<-10+20                  # Simple Math
 x
@@ -14,9 +14,9 @@ y
 print("My First Program") # Prints data in console
 
 
-#R objects ======================================================================
+#R objects =================================
 
-x <- 1:10                      # put the numbers 1-10 in the variable X - Assignment operator (= or <-)
+x <- 1:1  # put the numbers 1-10 in the variable X - Assignment operator (= or <-)
 1:10 -> x1                     # you can also assign the same
 x1
 y <- c(11,12,13,14,15)         # concate nate function , puts the numbers into y
@@ -28,9 +28,9 @@ a
 b
 c
 
-# DATA TYPES ==================================================================
+# DATA TYPES ============================================
 
-# Numeric ---------------------------------------------------------------------
+# Numeric -------------------------------------------
 1.7                        # Decimal mark is a dot
 options(scipen=999)
 7.8e3                      # One can use scientific notation
@@ -43,7 +43,7 @@ format(4/6799, digits = 2) # Formatting numbers
 round(pi, 2)                # Rounding
 
 
-# Logical ---------------------------------------------------------------------
+# Logical -----------------------------------------------
 
 2 == 5       #is 2 equal to 5?
 
