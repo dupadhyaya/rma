@@ -1,7 +1,62 @@
 # R Programming
+?mean
+x <- c(0:10, 50)
+x
+xm <- mean(x)
+xm
+mean(x, trim = 0.10)
+
+# Scalar
+(x <- 1)
+x = 1
+# Vector
+c(1:5)
+x = c(1,2,3,4,10,5,5,3,2,5,7,7,8,9)
+mean(x); median(x)
+sort(x)
+
+table(x)
+
+library(modeest)
+mlv(x, method = "lientz", bw = 0.2)
+
+ratings =c(rep('Good',5), rep('Poor',3))
+ratings
+table(ratings)
+barplot(table(ratings))
+
+
+
+rollno = c(10,22,44,23)
+sales = runif(12, 50, 100)
+sales
+plot(sales, type='b')
+?plot
+
+?runif
+
+
+str(x)
+y = c('abhinav', 'Rishi', 'Shreya')
+str(y)
+z = c(TRUE, FALSE, TRUE, FALSE)
+str(z)
+
+
+
+
+
+abinav=c(1,3,6,8,6,3,100,NA)
+str(abinav)
+is.na(abinav)
+mean(x=abinav)
+mean(x=abinav,trim=0.4)
+x = c(TRUE, FALSE, TRUE)
+mean(x)
+mean(c(1,0,1))
 
 #Categorical Data
-product = c('maggi', 'top ramen', 'hakka')
+product = c('maggi', 'topramen', 'hakka')
 product
 shirtcolor = c('green', 'red', 'blue', 'black')
 shirtcolor
@@ -24,8 +79,23 @@ product
 #Ordinal Data
 performance
 #need to create order
-performance1 = factor(performance, ordered=T, levels=c(1,2,3,4,5))
+performance=c(1,2,5,2,5,2,5,2,5)
+length(performance)
+performance
+str(performance)
+performance[9] = 100
+performance
+
+performance1 = factor(performance, ordered=TRUE, levels=c(4,2,5,1,3,8,100))
+performance1[1] = 100
+
+
+
+table(performance1)
 performance1
+
+
+
 rating
 rev(rating)
 rating1 = factor(rating, ordered=T, levels=rev(rating))
@@ -36,6 +106,39 @@ grades1 = factor(grades, ordered=T, levels=c('F','E','D','C','B', 'A'))
 grades1
 summary(grades1)
 
+# -----
+#vectors, factors
+#list matrix
+?matrix
+mdat <- matrix(c(1,2,3,11,12,13), 
+               nrow = 2, ncol = 3)
+mdat[1,1] ='dhiraj'              
+mdat               
+(x = 1:24)               
+(matx = matrix(x, nrow=6, byrow=TRUE))               
+?data.frame
+
+(salemon = month.abb[1:12])
+salemon = factor(salemon, ordered=T,levels=month.abb[1:12])
+salemon
+(sales1 = runif(12, min=50, max=100))
+salemon; sales1
+(adamt = runif(12, min=12, max=25))
+(salesmonthwise = data.frame(salemon, sales, adamt))
+rownames(salesmonthwise) = month.abb[1:12]
+salesmonthwise
+colnames(salesmonthwise) = c('col1','col2','col3')
+
+salesmonthwise[1:5,1:3]
+?head
+head(salesmonthwise,n=3)
+head(salesmonthwise[c(1,3)],n=3)
+head(salesmonthwise[c('col1','col2')],n=3)
+salesmonthwise[c('Jan'),c('col1','col2')]
+salesmonthwise[salesmonthwise$col3 < 20,c(1,2,3)]
+
+colSums(salesmonthwise[-1])
+rowSums(salesmonthwise[-1])
 
 
 # Data Properties

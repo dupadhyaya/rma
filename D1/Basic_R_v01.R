@@ -53,9 +53,9 @@ round(pi, 2)                # Rounding
 (2 == 2) & (5 == 5)     # & - logical conjunction  
 (2 == 2) | (5 != 5)     # | - logical alternative 
 
-# Character -------------------------------------------------------------------
+# Character ------------------------------------------------------
 
-"Meetingin with  R"                                                  # strings should be enclosed with ' or "
+"Meeting in with  R"                                                  # strings should be enclosed with ' or "
 paste("I learn R", 'and use R')    # Concatenation of strings
 
 
