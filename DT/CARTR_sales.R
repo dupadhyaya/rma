@@ -11,58 +11,64 @@ library(rattle)
 
 # Set the working directory to folder where you have placed the Input Data
 
-Mer_Sales = read.csv(file = "./data/Predict Merchant_Sales v04.csv", header = T)
 
+MerSales2 = read.csv(file = "./data/msales.csv", skip=1, header = T)
+MerSales= MerSales2
 # Summarize the dataset
-summary(object = Mer_Sales)
-
+summary(object = MerSales)
+summary(MerSales)
+str(MerSales)
 # Look at the average Annual_Sales()
-for(i in 2:ncol(Mer_Sales))
+for(i in 2:ncol(MerSales))
 {
-  if(length(unique(Mer_Sales[,i])) <= 5)
+  if(length(unique(MerSales[,i])) <= 5)
   {
-    Annual_Sales = aggregate(x = Mer_Sales$Annual_Sales, by = list(Mer_Sales[,i]), FUN = mean)
-    print(colnames(Mer_Sales)[i])
-    print(Annual_Sales)
-    print("************************************************************")
+    AnnualSales = aggregate(x =  MerSales$sales, by = list(MerSales[,i]), FUN = mean)
+    print(colnames(MerSales)[i])
+    print(AnnualSales)
+    print("*******************************************")
   }
 }
 
-
+aggregate(MerSales$sales, by=list(MerSales$loc), FUN=sum)
+?aggregate
 # Make a copy of the Original Dataset
-Mer_SalesUncapped = Mer_Sales
+MerSalesUncapped = MerSales
 
 # Random Sampling
 set.seed(777) # To ensure reproducibility
-Index = sample(x = 1:nrow(Mer_SalesUncapped), size = 0.7*nrow(Mer_SalesUncapped))
-
+Index = sample(x = 1:nrow(MerSalesUncapped), size = 0.7*nrow(MerSalesUncapped))
+Index
+?sample
 # Create Train dataset
-Mer_SalesTrainUncapped = Mer_SalesUncapped[Index, ]
-nrow(Mer_SalesTrainUncapped)
-summary(object = Mer_SalesTrainUncapped)
+MerSalesTrainUncapped = MerSalesUncapped[Index, ]
+nrow(MerSalesTrainUncapped)
+summary(object = MerSalesTrainUncapped)
 
 # Create Test dataset
-Mer_SalesTestUncapped = Mer_SalesUncapped[-Index, ]
-nrow(Mer_SalesTestUncapped)
-summary(object = Mer_SalesTestUncapped)
+MerSalesTestUncapped = Mer_SalesUncapped[-Index, ]
+nrow(MerSalesTestUncapped)
+summary(object = MerSalesTestUncapped)
 
 
-########################### Modeling #################################
+########################### Modeling ############################
 
 # Build a full model with default settings
 set.seed(123) # To ensure reproducibility of xerrors (cross validated errors while estimating complexity paramter for tree pruning)
-CartFullModel = rpart(formula = Annual_Sales ~ . , data = Mer_SalesTrainUncapped[,-1], method = "anova")
+CartFullModel = rpart(formula = sales ~ . , data = MerSalesTrainUncapped[,-1], method = "anova")
 CartFullModel
 summary(object = CartFullModel)
 
+
 # Plot the Regression Tree
 rpart.plot(x = CartFullModel, type = 4,fallen.leaves = T, cex = 0.6)
+
 title("CartFullModel") # Enlarge the plot by clicking on Zoom button in Plots Tab on R Studio
 
 # fancyRpartPlot() function to plot the same model
 # Expand the plot window in R Studio to see a presentable output
 fancyRpartPlot(model = CartFullModel, main = "CartFullModel", cex = 0.6) 
-
+?fancyRpartPlot
 # The following code also produces the same output, but in a windowed form
 windows()
 fancyRpartPlot(model = CartFullModel, main = "CartFullModel", cex = 0.6)
@@ -90,8 +96,15 @@ CartModel_1 = rpart(formula = Annual_Sales ~ . ,
                     method = "anova", control = RpartControl)
 
 CartModel_1
+
+CartModel_1$where
+trainingnodes = rownames(CartModel_1$frame) [ CartModel_1$where]
+trainingnodes
+
 summary(CartModel_1)
 rpart.plot(x = CartModel_1, type = 4,fallen.leaves = T, cex = 0.6)
+rpart.plot(x = CartModel_1, type = 4,fallen.leaves = F, cex = 0.6)
+?
 printcp(x = CartModel_1)
 rsq.rpart(x = CartModel_1)
 
