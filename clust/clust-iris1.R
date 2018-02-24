@@ -6,7 +6,8 @@ k1 <- kmeans(x=iris[, 1:4], centers=3)
 k1
 fpc::plotcluster(iris[,1:4], k1$cluster)
 
-
+clusplot(dat, clus$cluster, color=TRUE, shade=TRUE, 
+         labels=2, lines=0)
 
 
 library(datasets)

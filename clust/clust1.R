@@ -42,6 +42,7 @@ clusplot(dat, clus$cluster, color=TRUE, shade=TRUE,
          labels=2, lines=0)
 
 
+
 with(iris, pairs(dat, col=c(1:3)[clus$cluster])) 
 
 
