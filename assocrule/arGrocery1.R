@@ -12,24 +12,32 @@ data(Groceries)
 str(Groceries)
 head(Groceries)
 
+inspect(Groceries[1:5])
 # Create an item frequency plot for the top 20 items
 itemFrequencyPlot(Groceries,topN=20,type="absolute")
-#minsupport to 0.001 , min conf of 0.8 ; show top 5 rules
-rules <- apriori(Groceries, parameter = list(supp = 0.001, conf = 0.8))
+itemFrequencyPlot(Groceries, topN = 10)
+abline(h=0.2)
 
+#minsupport to 0.001 , min conf of 0.8 ; show top 5 rules
+rules <- arules::apriori(Groceries, parameter = list(supp = 0.001, conf = 0.8))
+rules
 # Show the top 5 rules, but only 2 digits
 options(digits=2)
+
 inspect(rules[1:5])
 #[3] if someone buys yogurt & cereals, they are 81% likely to buy whole milk too.
 summary(rules)
 
 rules<-sort(rules, by="confidence", decreasing=TRUE)
 inspect(head(rules))
-
+inspect(rules[1:50])
 
 #Rule 4/ other is perhaps excessively long. Lets say you wanted more concise rules. That is also easy to do by adding a “maxlen” parameter to your apriori function:
-rules <- apriori(Groceries, parameter = list(supp = 0.001, conf = 0.8,maxlen=3))
+inspect(Groceries[1:5])
+rules <- apriori(Groceries, parameter = list(supp = 0.001, conf = 0.8,maxlen=4))
 inspect(head(rules))
+?apriori
+
 
 # Redundancies ####
 subset.matrix <- is.subset(rules, rules)
@@ -51,6 +59,14 @@ rules1<-apriori(data=Groceries, parameter=list(supp=0.001,conf = 0.08),
                control = list(verbose=F))
 rules1<-sort(rules1, decreasing=TRUE,by="confidence")
 inspect(rules1[1:5])
+
+rules2<-apriori(data=Groceries, parameter=list(supp=0.001,conf = 0.08), 
+                appearance = list(default="rhs",lhs="whole milk"),
+                control = list(verbose=F))
+rules2<-sort(rules2, decreasing=TRUE,by="confidence")
+inspect(rules2[1:5])
+
+
 #Likewise, we can set the left hand side to be “whole milk” and find its antecedents.
 
 #  We set the confidence to 0.15 since we get no rules with 0.8

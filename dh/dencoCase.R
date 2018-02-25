@@ -1,6 +1,7 @@
 # Case Study - Denco
 
-sales = read.csv("./data/CustPartSalesData.csv")
+sales1 = read.csv("./data/denco.csv")
+sales = sales1
 summary(sales)
 str(sales)
 

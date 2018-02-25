@@ -1,21 +1,10 @@
 # Groceries Example 2 ####
 
-library (arules)
-library (arulesViz)
-library (datasets)
-data (Groceries)
+library(arules)
+library(arulesViz)
+library(datasets)
+data('Groceries')
 str(Groceries)
-# Change to any data Frame
-myDataFrame= Groceries
-transDat <- as (myDataFrame, "transactions") 
-transDat
-inspect (transDat[1:10]) 
-inspect (transDat[10]) 
-
-?inspect
-length (transDat)
-size (transDat)
-LIST(transDat) 
 
 #Lets Apply Apriori Algorithm
 frequentItems <- eclat (Groceries, parameter = list(supp = 0.07, maxlen = 15)) 
@@ -60,7 +49,7 @@ rules
 
 # Interactive Plot
 
-plot (rules[1:25],method="graph",interactive=TRUE,shading="confidence") 
+plot(rules[1:5],method="graph",interactive=TRUE,shading="confidence") 
 plot (rules, measure=c("support", "lift"), shading="confidence")
 
 # Calculates affinity - the 'nxn' Jaccard Index affinity matrix
@@ -77,3 +66,16 @@ LIST(Adult[1:5])
 rulesA1 = apriori(Adult)
 inspect(rulesA1[1:5])
 inspect(rulesA1[1:5], ruleSep="---->", itemSep="+", setStart = "", setEnd ="",   linebreak = FALSE)
+
+
+# Change to any data Frame
+#myDataFrame= Groceries
+#transDat <- as (myDataFrame, "transactions") 
+transDat
+inspect (transDat[1:10]) 
+inspect (transDat[10]) 
+
+?inspect
+length (transDat)
+size (transDat)
+LIST(transDat) 
