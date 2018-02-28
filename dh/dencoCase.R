@@ -1,18 +1,27 @@
-# Case Study - Denco
+# Case Study - Denco  
 
 sales1 = read.csv("./data/denco.csv")
-sales = sales1
+#sales1 = read.csv(file.choose())
+
+sales = sales1  # keeping a backup
+?summary
 summary(sales)
 str(sales)
 
 unique(sales$custname)
+length(unique(sales$custname))
+length(unique(sales$region ))
+
+aggregate(sales$revenue , by=list(sales$custname), FUN=max)
 df1 = aggregate(sales$revenue , by=list(sales$custname), FUN=sum)
+head(df1)
 str(df1)
+
 df1[order(df1$x, decreasing=TRUE),]
-head(df1[order(df1$x, decreasing=TRUE),],10)
+head(df1[order(df1$x, decreasing=TRUE),], 5)
 
 #Aggregate Formula
-df2 = aggregate(revenue ~ custname, data=sales, FUN=sum)
+df2 = aggregate(revenue ~ region, data=sales, FUN=sum)
 head(df2[order(df2$revenue,decreasing=T),],10)
 
 #List
@@ -29,8 +38,8 @@ names(sales)
 
 library(dplyr)
 
-#sales %>% filter(revenue > 10000000)
-
+sales %>% dplyr::filter(margin > 1000000)
+names(sales)
 sales %>% group_by(custname) %>% 
   summarize(Revenue = sum(revenue)) %>% arrange(desc(Revenue))
 
@@ -39,7 +48,7 @@ library(data.table)
 dt1 = as.data.table(sales)
 dt2 = dt1[, sum(revenue), by=custname]
 names(dt2)
-dt1[, dt1[, sum(revenue), by=custname]
+dt1[, dt1[, sum(revenue), by=custname]]
 
 dt1[, order(, decreasing = T)]
 

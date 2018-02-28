@@ -43,14 +43,15 @@ z = c(TRUE, FALSE, TRUE, FALSE)
 str(z)
 
 
-
-
-
-abinav=c(1,3,6,8,6,3,100,NA)
+abinav=c(1,3,6,8,6,3,100,rep(NA,5))
+abinav
 str(abinav)
 is.na(abinav)
+anyNA(abinav)
+mean(abinav,na.rm=T)
+
 mean(x=abinav)
-mean(x=abinav,trim=0.4)
+mean(x=abinav,trim=0.4, na.rm=T)
 x = c(TRUE, FALSE, TRUE)
 mean(x)
 mean(c(1,0,1))
@@ -70,6 +71,9 @@ decision = c('buy', 'sell')
 decisionTF = c(TRUE, FALSE )
 str(decision); str(decisionTF)
 grades = c('A','C','B','D','E','B')
+grades
+grades1 = factor(grades, ordered=T, levels=c('E','D','A','B','C'))
+grades1
 itemssold = c(10, 20, 30, 25)
 
 
@@ -88,8 +92,6 @@ performance
 
 performance1 = factor(performance, ordered=TRUE, levels=c(4,2,5,1,3,8,100))
 performance1[1] = 100
-
-
 
 table(performance1)
 performance1
@@ -110,13 +112,14 @@ summary(grades1)
 #vectors, factors
 #list matrix
 ?matrix
-mdat <- matrix(c(1,2,3,11,12,13), 
-               nrow = 2, ncol = 3)
+mdat <- matrix(c(1,2,3,11,12,13), nrow = 2, ncol = 3)
 mdat[1,1] ='dhiraj'              
 mdat               
 (x = 1:24)               
 (matx = matrix(x, nrow=6, byrow=TRUE))               
 ?data.frame
+
+
 
 (salemon = month.abb[1:12])
 salemon = factor(salemon, ordered=T,levels=month.abb[1:12])
@@ -140,17 +143,39 @@ salesmonthwise[salesmonthwise$col3 < 20,c(1,2,3)]
 colSums(salesmonthwise[-1])
 rowSums(salesmonthwise[-1])
 
+# Day3
 
 # Data Properties
 set.seed(10)
+?rnorm
 sales1 = rnorm(100, mean=50, sd=10)
 sales1
+range(sales1)
+hist(sales1)
+plot(density(sales1))
+abline(v=50)
 
-set.seed(10)
-sales2 = rnorm(100, mean=60, sd=10)
+set.seed(1)
+sales3 = runif(10,1,5)
+sales3
+mean(sales3)
+set.seed(1)
+sales4 = runif(10,1,5)
+sales4
+mean(sales4)
+
+
+names = c('A', 'B', 'C')
+?sample
+v1= sample(x=names, size=4, replace = FALSE, prob = c(.2,.3,.5))
+v1
+table(v1)
+
+
+sales2 = rnorm(100, mean=60, sd=12)
 sales2
-
-
+plot(density(sales2))
+abline(v=60)
 sales3= c(1,5,2,5,2,3,6,7,8,4,5)
 sales3
 #
@@ -206,9 +231,15 @@ hist(sales1)
 plot(density(sales1))
 abline(v=50)
 
+sales2 = rnorm(100, mean=60, sd=12)
+
+sales2
+range(sales2)
 hist(sales2, prob=T)
+?hist
 lines(density(sales2), col='red')
 abline(v=60, col="green")
+abline(h=.02, col="red")
 
 # Combine Plots
 plot(density(sales1), col='green', ylim=c(0,0.05))

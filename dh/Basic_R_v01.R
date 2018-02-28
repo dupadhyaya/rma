@@ -59,7 +59,7 @@ round(pi, 2)                # Rounding
 paste("I learn R", 'and use R')    # Concatenation of strings
 
 
-# Special ---------------------------------------------------------------------
+# Special --------------------------------------------------
 
 1/0                    # Inf, -Inf
 -1/0                   # Inf, -Inf
@@ -68,7 +68,7 @@ NA                     # NA - Missing values
 NULL                   # NULL
 
 
-# Factor ----------------------------------------------------------------------
+# Factor --------------------------------------------------
 f1 = c("girl", "boy", "boy", "girl", "boy")
 f1
 class(f1)
@@ -77,9 +77,9 @@ f
 class(f)
 # Categorical variables
 
-# DATA STRUCTURES =============================================================
+# DATA STRUCTURES ===========================================
 
-# Vectors # set of objects of the same type, one dimensional ---------------------------------------------------------------------
+# Vectors # set of objects of the same type, one dimensional --------------------------------------------
 
 my_vector <- c(-1, 2, 6, 6.7, 2, 0.45, 2, 4)    # defined with a c() function (c for concatenate), vectors are vertical)  # Numeric vector
 
@@ -181,7 +181,7 @@ rep(1:4, each = 2, len = 10)
 rep(1:4, each = 2, times = 3)
 
 
-# Matrix --------------mxn--------------------------------------------------------
+# Matrix --------------mxn--------------------------------
 
 # Defined with a matrix() function with 3 arguments: 
 #vector of values, number of rows, number of columns
@@ -209,7 +209,7 @@ rowMeans(my_matrix)           # Avgs of rows
 colMeans(my_matrix)           # Avgs of colums
 
 
-# Array -----------------------------------------------------------------------
+# Array -------------------------------------------------
 
 # Defined with a array() function with 3 arguments: 
 #vector of values, dimensions, dimension names
@@ -229,7 +229,7 @@ my_array[3, 2, ]
 my_array[3, , ]
 
 
-# List ------------------------------------------------------------------------
+# List ------------------------------------------------
 
 # Set of objects that can have different types # Defined with the list() function
 (my_list <- list(name = c("Analytics", "Labs"), 
@@ -257,7 +257,7 @@ my_list[[1]][2]
 names(my_list2)      #lists all names of the list
 
 
-# Data frame ------------------------------------------------------------------
+# Data frame ---------------------------------------------
 
 # table with the same type within a 
 #column and different types between columns 

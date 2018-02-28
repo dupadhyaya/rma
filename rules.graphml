@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_label" for="node" attr.name="label" attr.type="string"/>
+  <key id="v_support" for="node" attr.name="support" attr.type="double"/>
+  <key id="v_confidence" for="node" attr.name="confidence" attr.type="double"/>
+  <key id="v_lift" for="node" attr.name="lift" attr.type="double"/>
+  <key id="v_count" for="node" attr.name="count" attr.type="double"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">14</data>
+      <data key="v_label">citrus fruit</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">15</data>
+      <data key="v_label">tropical fruit</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">16</data>
+      <data key="v_label">pip fruit</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">20</data>
+      <data key="v_label">root vegetables</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">23</data>
+      <data key="v_label">other vegetables</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">25</data>
+      <data key="v_label">whole milk</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">26</data>
+      <data key="v_label">butter</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">27</data>
+      <data key="v_label">curd</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">30</data>
+      <data key="v_label">yogurt</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">31</data>
+      <data key="v_label">whipped/sour cream</data>
+    </node>
+    <node id="n10">
+      <data key="v_name">55</data>
+      <data key="v_label">domestic eggs</data>
+    </node>
+    <node id="n11">
+      <data key="v_name">56</data>
+      <data key="v_label">rolls/buns</data>
+      <data key="v_support">0.0100660904931368</data>
+      <data key="v_confidence">0.582352941176471</data>
+      <data key="v_lift">2.27912502048173</data>
+      <data key="v_count">99</data>
+    </node>
+    <node id="n12">
+      <data key="v_name">assoc1</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0114895780376207</data>
+      <data key="v_confidence">0.573604060913706</data>
+      <data key="v_lift">2.24488497377091</data>
+      <data key="v_count">113</data>
+    </node>
+    <node id="n13">
+      <data key="v_name">assoc2</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0123029994916116</data>
+      <data key="v_confidence">0.552511415525114</data>
+      <data key="v_lift">2.16233576270971</data>
+      <data key="v_count">121</data>
+    </node>
+    <node id="n14">
+      <data key="v_name">assoc3</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0108795119471276</data>
+      <data key="v_confidence">0.524509803921569</data>
+      <data key="v_lift">2.05274728275711</data>
+      <data key="v_count">107</data>
+    </node>
+    <node id="n15">
+      <data key="v_name">assoc4</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0146415861718353</data>
+      <data key="v_confidence">0.507042253521127</data>
+      <data key="v_lift">1.98438542116207</data>
+      <data key="v_count">144</data>
+    </node>
+    <node id="n16">
+      <data key="v_name">assoc5</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0135231316725979</data>
+      <data key="v_confidence">0.517509727626459</data>
+      <data key="v_lift">2.02535144098935</data>
+      <data key="v_count">133</data>
+    </node>
+    <node id="n17">
+      <data key="v_name">assoc6</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0103711235383833</data>
+      <data key="v_confidence">0.586206896551724</data>
+      <data key="v_lift">3.02960842227336</data>
+      <data key="v_count">102</data>
+    </node>
+    <node id="n18">
+      <data key="v_name">assoc7</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0123029994916116</data>
+      <data key="v_confidence">0.584541062801932</data>
+      <data key="v_lift">3.0209991343442</data>
+      <data key="v_count">121</data>
+    </node>
+    <node id="n19">
+      <data key="v_name">assoc8</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.011997966446365</data>
+      <data key="v_confidence">0.570048309178744</data>
+      <data key="v_lift">2.23096900945999</data>
+      <data key="v_count">118</data>
+    </node>
+    <node id="n20">
+      <data key="v_name">assoc9</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0151499745805796</data>
+      <data key="v_confidence">0.517361111111111</data>
+      <data key="v_lift">2.02476980810894</data>
+      <data key="v_count">149</data>
+    </node>
+    <node id="n21">
+      <data key="v_name">assoc10</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0129130655821047</data>
+      <data key="v_confidence">0.5</data>
+      <data key="v_lift">2.58407777193904</data>
+      <data key="v_count">127</data>
+    </node>
+    <node id="n22">
+      <data key="v_name">assoc11</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0145399084900864</data>
+      <data key="v_confidence">0.562992125984252</data>
+      <data key="v_lift">2.20335358498015</data>
+      <data key="v_count">143</data>
+    </node>
+    <node id="n23">
+      <data key="v_name">assoc12</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0122013218098627</data>
+      <data key="v_confidence">0.502092050209205</data>
+      <data key="v_lift">2.59488981282582</data>
+      <data key="v_count">120</data>
+    </node>
+    <node id="n24">
+      <data key="v_name">assoc13</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.012709710218607</data>
+      <data key="v_confidence">0.523012552301255</data>
+      <data key="v_lift">2.04688756541299</data>
+      <data key="v_count">125</data>
+    </node>
+    <node id="n25">
+      <data key="v_name">assoc14</data>
+      <data key="v_label"></data>
+      <data key="v_support">0.0222674123029995</data>
+      <data key="v_confidence">0.51288056206089</data>
+      <data key="v_lift">2.00723451168677</data>
+      <data key="v_count">219</data>
+    </node>
+    <node id="n26">
+      <data key="v_name">assoc15</data>
+      <data key="v_label"></data>
+    </node>
+    <edge source="n7" target="n12">
+    </edge>
+    <edge source="n8" target="n12">
+    </edge>
+    <edge source="n4" target="n13">
+    </edge>
+    <edge source="n6" target="n13">
+    </edge>
+    <edge source="n4" target="n14">
+    </edge>
+    <edge source="n10" target="n14">
+    </edge>
+    <edge source="n8" target="n15">
+    </edge>
+    <edge source="n9" target="n15">
+    </edge>
+    <edge source="n4" target="n16">
+    </edge>
+    <edge source="n9" target="n16">
+    </edge>
+    <edge source="n2" target="n17">
+    </edge>
+    <edge source="n4" target="n17">
+    </edge>
+    <edge source="n0" target="n18">
+    </edge>
+    <edge source="n3" target="n18">
+    </edge>
+    <edge source="n1" target="n19">
+    </edge>
+    <edge source="n3" target="n19">
+    </edge>
+    <edge source="n1" target="n20">
+    </edge>
+    <edge source="n3" target="n20">
+    </edge>
+    <edge source="n1" target="n21">
+    </edge>
+    <edge source="n8" target="n21">
+    </edge>
+    <edge source="n3" target="n22">
+    </edge>
+    <edge source="n8" target="n22">
+    </edge>
+    <edge source="n3" target="n23">
+    </edge>
+    <edge source="n8" target="n23">
+    </edge>
+    <edge source="n3" target="n24">
+    </edge>
+    <edge source="n11" target="n24">
+    </edge>
+    <edge source="n3" target="n25">
+    </edge>
+    <edge source="n11" target="n25">
+    </edge>
+    <edge source="n4" target="n26">
+    </edge>
+    <edge source="n8" target="n26">
+    </edge>
+    <edge source="n12" target="n5">
+    </edge>
+    <edge source="n13" target="n5">
+    </edge>
+    <edge source="n14" target="n5">
+    </edge>
+    <edge source="n15" target="n5">
+    </edge>
+    <edge source="n16" target="n5">
+    </edge>
+    <edge source="n17" target="n5">
+    </edge>
+    <edge source="n18" target="n4">
+    </edge>
+    <edge source="n19" target="n4">
+    </edge>
+    <edge source="n20" target="n5">
+    </edge>
+    <edge source="n21" target="n5">
+    </edge>
+    <edge source="n22" target="n4">
+    </edge>
+    <edge source="n23" target="n5">
+    </edge>
+    <edge source="n24" target="n4">
+    </edge>
+    <edge source="n25" target="n5">
+    </edge>
+    <edge source="n26" target="n5">
+    </edge>
+  </graph>
+</graphml>
